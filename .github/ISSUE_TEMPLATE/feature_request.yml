@@ -1,0 +1,145 @@
+name: Feature Request
+description: Propose an enhancement or new feature
+labels: ["enhancement"]
+title: "[Feature]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## ✨ Feature Request
+        Thanks for suggesting a new feature! Please provide as much detail as possible to help us understand your proposal.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem Statement
+      description: Is your feature request related to a problem? Please describe the problem you're trying to solve.
+      placeholder: "I'm frustrated when... / It would be helpful if... / Currently there is no way to..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution
+      description: Describe the solution you'd like to see implemented
+      placeholder: "I would like to see... / The feature should work by... / We could add..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: Have you considered any alternative solutions or features?
+      placeholder: "I've also thought about... / Another approach could be... / We could alternatively..."
+
+  - type: dropdown
+    id: feature-type
+    attributes:
+      label: Feature Type
+      description: What type of feature is this?
+      options:
+        - New MIPS program/example
+        - Documentation improvement
+        - New lab exercise
+        - Code optimization
+        - Tool/utility addition
+        - Repository structure improvement
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope and Implementation Details
+      description: If you have ideas about how this could be implemented, please share them
+      placeholder: |
+        Files that would need to be created/modified:
+        - 
+        
+        Implementation approach:
+        - 
+        
+        Estimated complexity: [Low/Medium/High]
+
+  - type: textarea
+    id: out-of-scope
+    attributes:
+      label: Out of Scope
+      description: What should NOT be included in this feature? (optional)
+      placeholder: "This feature should not include... / We should avoid..."
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: How important is this feature to you?
+      options:
+        - Critical - Blocking my work
+        - High - Very important
+        - Medium - Would be nice to have
+        - Low - Minor enhancement
+    validations:
+      required: true
+
+  - type: textarea
+    id: benefits
+    attributes:
+      label: Benefits
+      description: Who would benefit from this feature and how?
+      placeholder: "This would help... / Students learning MIPS would benefit by... / This would make it easier to..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: risks
+    attributes:
+      label: Potential Risks or Drawbacks
+      description: Are there any potential downsides or risks to implementing this feature?
+      placeholder: "This might complicate... / Could potentially conflict with... / Risk of..."
+
+  - type: textarea
+    id: examples
+    attributes:
+      label: Examples or References
+      description: Links to similar implementations, examples, or reference materials (optional)
+      placeholder: |
+        - Similar feature in project X: [URL]
+        - Reference documentation: [URL]
+        - Example code: [URL]
+
+  - type: dropdown
+    id: contribution
+    attributes:
+      label: Would you like to contribute this feature?
+      description: Are you willing to help implement this feature?
+      options:
+        - Yes, I can implement this
+        - Yes, I can help with implementation
+        - No, but I can help with testing
+        - No, but I can help with documentation
+        - No, I cannot contribute at this time
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional Context
+      description: Add any other context, screenshots, or mockups about the feature request here
+      placeholder: "Any additional information that might be helpful..."
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Checklist
+      description: Please confirm the following
+      options:
+        - label: I have searched existing issues to ensure this feature hasn't been requested
+          required: true
+        - label: This feature aligns with the project's goals (educational MIPS Assembly repository)
+          required: true
+        - label: I have provided detailed information about the proposed feature
+          required: true
