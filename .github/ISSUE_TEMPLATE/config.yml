@@ -1,0 +1,14 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 GitHub Discussions
+    url: https://github.com/H0NEYP0T-466/mips_workbench/discussions
+    about: Ask questions, share ideas, and engage with the community
+  - name: 🛡️ Security Vulnerability
+    url: https://github.com/H0NEYP0T-466/mips_workbench/security
+    about: Report security vulnerabilities privately (see SECURITY.md)
+  - name: 📚 Documentation
+    url: https://github.com/H0NEYP0T-466/mips_workbench/blob/main/README.md
+    about: Read the documentation and user guides
+  - name: 🤝 Contributing Guide
+    url: https://github.com/H0NEYP0T-466/mips_workbench/blob/main/CONTRIBUTING.md
+    about: Learn how to contribute to the project

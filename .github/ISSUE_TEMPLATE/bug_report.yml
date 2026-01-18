@@ -1,0 +1,149 @@
+name: Bug Report
+description: Report a reproducible problem or bug
+labels: ["bug"]
+title: "[Bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🐛 Bug Report
+        Thanks for taking the time to report this bug! Please fill out the information below to help us understand and resolve the issue.
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Bug Summary
+      description: A clear and concise description of what the bug is.
+      placeholder: e.g., "Program crashes when loading LAB_3_TASK#2.asm in MARS"
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: Detailed steps to reproduce the behavior
+      placeholder: |
+        1. Open MARS simulator
+        2. Load file 'LAB_3_TASK#2.asm'
+        3. Assemble the program
+        4. Run the program
+        5. See error
+      value: |
+        1. 
+        2. 
+        3. 
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What did you expect to happen?
+      placeholder: "The program should display the output without errors"
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual Behavior
+      description: What actually happened?
+      placeholder: "The program crashed with a runtime error"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: simulator
+    attributes:
+      label: MIPS Simulator
+      description: Which MIPS simulator are you using?
+      options:
+        - MARS
+        - SPIM
+        - QtSpim
+        - Online simulator
+        - Other (please specify in additional context)
+    validations:
+      required: true
+
+  - type: input
+    id: simulator-version
+    attributes:
+      label: Simulator Version
+      description: What version of the simulator are you using?
+      placeholder: "e.g., MARS 4.5, SPIM 8.0"
+
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating System
+      description: What operating system are you using?
+      options:
+        - Windows 11
+        - Windows 10
+        - macOS (Apple Silicon)
+        - macOS (Intel)
+        - Linux (Ubuntu)
+        - Linux (Debian)
+        - Linux (Fedora)
+        - Linux (Other)
+        - Other (please specify in additional context)
+    validations:
+      required: true
+
+  - type: input
+    id: java-version
+    attributes:
+      label: Java Version (if using MARS)
+      description: What version of Java are you using (if applicable)?
+      placeholder: "e.g., Java 17.0.2"
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Error Logs or Console Output
+      description: Please paste any relevant error messages, stack traces, or console output
+      placeholder: "Paste logs here..."
+      render: shell
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
+      description: If applicable, add screenshots to help explain your problem
+      placeholder: "Drag and drop images here or paste image URLs"
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      description: How severe is this bug?
+      options:
+        - Critical - Completely blocks usage
+        - High - Major functionality broken
+        - Medium - Workaround exists
+        - Low - Minor inconvenience
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional Context
+      description: Add any other context about the problem here
+      placeholder: "Any additional information that might be helpful..."
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Checklist
+      description: Please confirm the following
+      options:
+        - label: I have searched existing issues to ensure this bug hasn't been reported
+          required: true
+        - label: I have provided all the required information above
+          required: true
+        - label: I am willing to help test a fix if provided
+          required: false
