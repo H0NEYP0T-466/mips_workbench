@@ -1,0 +1,45 @@
+.data
+msg1: .asciiz "Enter a number: "
+msg2: .asciiz "Factorial = "
+
+.text
+.globl main
+main:
+    li $v0, 4
+    la $a0, msg1
+    syscall
+
+    li $v0, 5
+    syscall
+    move $a0, $v0
+
+    jal factorial
+    move $t0, $v0
+
+    li $v0, 4
+    la $a0, msg2
+    syscall
+
+    move $a0, $t0
+    li $v0, 1
+    syscall
+
+    li $v0, 10
+    syscall
+
+factorial:
+    addi $sp, $sp, -8
+    sw $ra, 4($sp)
+    sw $a0, 0($sp)
+    ble $a0, 1, base
+    addi $a0, $a0, -1
+    jal factorial
+    lw $t1, 0($sp)
+    mul $v0, $t1, $v0
+    j exit
+base:
+    li $v0, 1
+exit:
+    lw $ra, 4($sp)
+    addi $sp, $sp, 8
+    jr $ra

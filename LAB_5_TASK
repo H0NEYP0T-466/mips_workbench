@@ -1,0 +1,57 @@
+.data
+string: .asciiz "Enter a number:"
+string2: .asciiz "Reversed string using stack is:"
+.text
+.globl main
+main:
+	
+    li $v0,4
+    la $a0,string
+    syscall
+ 
+    
+    li $v0,5
+    syscall
+    move $t0,$v0
+    move $t4,$t0
+    li $t1,1
+    
+    li $v0,4
+    la $a0,string2
+    syscall
+    
+  
+pl:
+    li $t5,10
+    bge $t4,$t5,pi
+    j pd
+pi:
+    div $t4,$t5
+    mflo $t4
+    mul $t1,$t1,$t5
+    j pl
+pd:
+    move $t2,$zero
+dl:
+    beq $t1,$zero,pr
+    div $t0,$t1
+    mflo $t3
+    mfhi $t0
+    addiu $sp,$sp,-4
+    sw $t3,0($sp)
+    addiu $t2,$t2,1
+    li $t5,10
+    div $t1,$t5
+    mflo $t1
+    j dl
+pr:
+    beq $t2,$zero,dn
+    lw $a0,0($sp)
+    addiu $sp,$sp,4
+    li $v0,1
+    syscall
+    addiu $t2,$t2,-1
+    j pr
+dn:
+    li $v0,10
+    syscall

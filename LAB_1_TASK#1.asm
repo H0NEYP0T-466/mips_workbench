@@ -1,0 +1,30 @@
+.data
+newString: .asciiz "fezan bin abdul rehman"
+string: .asciiz "\nmy age is:"
+string1: .asciiz "\nmy gender is:"
+gender: .byte 'M'
+age: .word 19
+.text
+main:
+li $v0, 4
+la $a0, newString
+syscall
+
+li $v0, 4
+la $a0, string
+syscall
+
+li $v0, 1
+lw $a0, age
+syscall
+
+li $v0, 4
+la $a0, string1
+syscall
+
+li $v0, 11
+lb $a0, gender
+syscall
+
+li $v0, 10
+syscall

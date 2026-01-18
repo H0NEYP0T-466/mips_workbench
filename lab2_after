@@ -1,0 +1,47 @@
+.data
+newString: .asciiz "The sum is:"
+num1: .word 5
+num2: .word 5
+name: .asciiz "\nfezan bin abdul rehman"
+string: .asciiz "\nmy age is:"
+string1: .asciiz "\nmy gender is:"
+gender: .byte 'M'
+age: .word 19
+.text
+li $v0, 4
+la $a0, newString
+syscall
+
+lw $t0,num1
+lw $t1,num2
+
+add $t2,$t0,$t1
+
+li $v0, 1
+move $a0, $t2
+syscall
+
+li $v0, 4
+la $a0, name
+syscall
+
+li $v0, 4
+la $a0, string
+syscall
+
+li $v0, 1
+lw $a0, age
+syscall
+
+li $v0, 4
+la $a0, string1
+syscall
+
+li $v0, 11
+lb $a0, gender
+syscall
+
+li $v0, 10
+syscall
+
+
